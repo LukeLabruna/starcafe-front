@@ -7,7 +7,7 @@ const useAuth = () => {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const response = await api.get("/isauth")
+                const response = await api.get("/user/isauth")
                 setAuth({ isAuth: response.data.isAuth, user: response.data.user })
             } catch (error) {
                 setAuth({ isAuth: false, user: null })

@@ -1,0 +1,49 @@
+
+@font-face {
+    font-family: HellPrint;
+    src: url(/fonts/HellPrint.ttf), url(/fonts/HellPrint.otf)
+}
+
+@font-face {
+    font-family: Brixton-Outline;
+    src: url(/fonts/Brixton-Outline.ttf)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+h1 {
+    font-family: HellPrint;
+    color: #f9e4c9;
+    font-size: 5rem;
+    font-weight: lighter;
+    margin-top: 5rem;
+}
+
+p,
+a,
+label {
+    font-family: Brixton-Outline;
+    color: #f9e4c9;
+    font-weight: lighter
+}
+
+a {
+    text-decoration: none;
+    color: #373636
+}
+
+#root {
+    background-image: url(/assets/wallSC-NfY-Z03e.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 8rem
+}

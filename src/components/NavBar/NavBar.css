@@ -1,0 +1,17 @@
+.navBar {
+    display: flex;
+    width: 100%;
+    background-color: #f9e4c9;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    position: fixed;
+    top: 0
+}
+
+.navBar a {
+    font-family: HellPrint;
+    font-weight: lighter;
+    margin: 0 1rem
+}

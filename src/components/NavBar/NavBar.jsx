@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom"
+import "./NavBar.css"
 
 const NavBar = () => {
   return (
-    <header>
+    <header className="navBar">
         <Link to={"/menu"} >Menu</Link>
         <a href="https://wa.link/u145yu">Contacto</a>
     </header>

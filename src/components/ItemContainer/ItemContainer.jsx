@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import api from "../../config/axiosConfig.js"
 import CardItem from "../CardItem/CardItem.jsx"
+import "./ItemContainer.css"
 
 const ItemContainer = () => {
 
@@ -20,7 +21,8 @@ const ItemContainer = () => {
     }, [])
 
   return (
-    <div>
+    <div className="itemContainer">
+        <h2>Menu</h2>
         {products.length >= 1 
         ? products.map( item => (
             <CardItem key={item._id} {...item} />

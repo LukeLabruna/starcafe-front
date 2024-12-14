@@ -1,6 +1,8 @@
+import "./CardItem.css"
+
 const CardItem = ({productName, price, category}) => {
   return (
-    <div className="carItem">
+    <div className="cardItem">
         <div className="nameCategory">
             <h2> {productName} </h2>
             <p> {category} </p>

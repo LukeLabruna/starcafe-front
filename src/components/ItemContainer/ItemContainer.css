@@ -1,0 +1,11 @@
+.itemContainer {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 5rem;
+}
+
+.itemContainer>h2 {
+    font-size: 4rem;
+    text-align: center;
+}

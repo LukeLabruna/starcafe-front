@@ -10,8 +10,6 @@
     top: 0
 }
 
-/* .navBar a {
-    font-family: HellPrint;
-    font-weight: lighter;
-    margin: 0 1rem
-} */
+.navBar a {
+    width: 25%;
+}

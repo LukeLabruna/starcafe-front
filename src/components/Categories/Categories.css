@@ -1,0 +1,16 @@
+.categories {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.categories button {
+    border: none;
+    background-color: #f9e4c9;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    font-family: Brixton-Outline;
+    font-size: 1rem;
+}

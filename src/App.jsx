@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { UserProvider } from './context/UserContext.jsx'
 import NavBar from "./components/NavBar/NavBar.jsx"
 import Home from "./components/Home/Home.jsx"
 import ItemContainer from './components/ItemContainer/ItemContainer.jsx'
@@ -10,13 +11,16 @@ function App() {
   return (
     <>
       <Router>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/menu' element={<ItemContainer />} />
-          <Route path='/login' element={<Login />} />
-        </Routes>
-        <Footer />
+        <UserProvider>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/menu' element={<ItemContainer title={"Menu"}/>} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/paneladmin' element={<ItemContainer title={"Panel Administrador"} />} />
+          </Routes>
+          <Footer />
+        </UserProvider>
       </Router>
     </>
   )

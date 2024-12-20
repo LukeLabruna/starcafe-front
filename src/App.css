@@ -38,6 +38,10 @@ label {
     font-weight: lighter
 }
 
+input {
+    text-transform: none;
+}
+
 a {
     text-decoration: none;
     color: #373636

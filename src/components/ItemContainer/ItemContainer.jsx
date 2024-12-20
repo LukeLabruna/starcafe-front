@@ -4,7 +4,7 @@ import CardItem from "../CardItem/CardItem.jsx"
 import "./ItemContainer.css"
 import Categories from "../Categories/Categories.jsx"
 
-const ItemContainer = () => {
+const ItemContainer = ({title}) => {
 
     const [products, setProducts] = useState([])
     const [category, setCategory] = useState(null)
@@ -24,7 +24,7 @@ const ItemContainer = () => {
 
   return (
     <div className="itemContainer">
-        <h2>Menu</h2>
+        <h2>{title}</h2>
         <Categories setCategory={setCategory} />
         {products.length >= 1 
         ? products.map( item => (

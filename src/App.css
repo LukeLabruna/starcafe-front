@@ -24,7 +24,7 @@ h1 {
     margin-top: 5rem;
 }
 
-h2 {
+h2, h3 {
     color: #f9e4c9;
     font-family: HellPrint;
     font-weight: lighter;

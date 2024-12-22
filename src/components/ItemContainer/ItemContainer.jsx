@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
+import { UserContext } from "../../context/UserContext.jsx"
 import api from "../../config/axiosConfig.js"
 import CardItem from "../CardItem/CardItem.jsx"
-import "./ItemContainer.css"
 import Categories from "../Categories/Categories.jsx"
+import CardItemAdmin from "../CardItemAdmin/CardItemAdmin.jsx"
+import "./ItemContainer.css"
 
 const ItemContainer = ({title}) => {
+
+    const { user, isAuth } = useContext(UserContext)
 
     const [products, setProducts] = useState([])
     const [category, setCategory] = useState(null)
@@ -26,9 +30,12 @@ const ItemContainer = ({title}) => {
     <div className="itemContainer">
         <h2>{title}</h2>
         <Categories setCategory={setCategory} />
+        <h3>Productos</h3>
         {products.length >= 1 
         ? products.map( item => (
-            <CardItem key={item._id} {...item} />
+            isAuth && user.role === "admin"
+            ? <CardItemAdmin key={item._id} {...item} />
+            : <CardItem key={item._id} {...item} />
         ))
         : <p>No se encontraron productos</p>
         }

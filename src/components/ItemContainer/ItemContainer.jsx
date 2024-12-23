@@ -5,6 +5,7 @@ import CardItem from "../CardItem/CardItem.jsx"
 import Categories from "../Categories/Categories.jsx"
 import CardItemAdmin from "../CardItemAdmin/CardItemAdmin.jsx"
 import "./ItemContainer.css"
+import showToast from "../../utils/swetAlert.js"
 
 const ItemContainer = ({title}) => {
 
@@ -20,7 +21,7 @@ const ItemContainer = ({title}) => {
                 const newProduct = response.data.data
                 setProducts(newProduct)
             } catch (error) {
-                console.log(error)
+                showToast("Error al obtener los productos", "error")
             }
         }
         fetchProducts()

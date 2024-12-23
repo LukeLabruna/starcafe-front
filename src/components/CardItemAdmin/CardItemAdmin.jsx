@@ -1,6 +1,6 @@
 import { useState } from "react"
 import api from "../../config/axiosConfig.js"
-import Swal from "sweetalert2"
+import showToast from "../../utils/swetAlert.js"
 import "./CardItemAdmin.css"
 
 const CardItemAdmin = ({ productName, price, category, _id }) => {
@@ -15,20 +15,9 @@ const CardItemAdmin = ({ productName, price, category, _id }) => {
     e.preventDefault()
     try {
       const response = await api.put(`/products`, {pid: _id, newPrice: inputPrice })
-      Swal.fire({
-        toast: true,
-        position: "top-end",
-        title: "Precio cambiado con exito",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        customClass: {
-          popup: "custom-swal-popup", 
-          timerProgressBar: "custom-swal-timer",
-      }
-    });
+      showToast("Precio actualizado", "success")
     } catch (error) {
-      console.log(error.response.data)
+      showToast("Error al actualizar el precio", "error")
     }
   }
 

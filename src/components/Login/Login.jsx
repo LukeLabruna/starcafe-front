@@ -1,8 +1,9 @@
-import api from "../../config/axiosConfig.js"
-import { useNavigate } from "react-router-dom"
-import UserContext from "../../context/UserContext.jsx"
-import "./Login.css"
 import { useContext, useState } from "react"
+import UserContext from "../../context/UserContext.jsx"
+import { useNavigate } from "react-router-dom"
+import api from "../../config/axiosConfig.js"
+import showToast from "../../utils/swetAlert.js"
+import "./Login.css"
 
 const Login = () => {
 
@@ -29,9 +30,10 @@ const Login = () => {
             const response = await api.post("/user/login", bodyData)
             setIsAuth(true)
             setUser(response.data.data.user)
+            showToast("Bienvenido", "success")
             navigate("/paneladmin")
         } catch (error) {
-            console.log(error.response.data)
+            showToast("Error al iniciar sesión", "error")
         }
 
     }

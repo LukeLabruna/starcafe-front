@@ -32,7 +32,7 @@ const ItemContainer = ({title}) => {
         <Categories setCategory={setCategory} />
         {products.length >= 1 
         ? products.map( item => (
-            isAuth && user.role === "admin"
+            isAuth && user.role === "admin" && title === "Panel Administrador"
             ? <CardItemAdmin key={item._id} {...item} />
             : <CardItem key={item._id} {...item} />
         ))

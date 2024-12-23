@@ -1,9 +1,12 @@
 import api from "../../config/axiosConfig.js"
 import { useNavigate } from "react-router-dom"
+import UserContext from "../../context/UserContext.jsx"
 import "./Login.css"
-import { useState } from "react"
+import { useContext, useState } from "react"
 
 const Login = () => {
+
+    const { setIsAuth, setUser } = useContext(UserContext)
 
     const [bodyData, setBodyData] = useState({
         userName: null,
@@ -24,7 +27,8 @@ const Login = () => {
 
         try {
             const response = await api.post("/user/login", bodyData)
-            console.log(response.data)
+            setIsAuth(true)
+            setUser(response.data.data.user)
             navigate("/paneladmin")
         } catch (error) {
             console.log(error.response.data)

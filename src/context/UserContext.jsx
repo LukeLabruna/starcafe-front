@@ -3,7 +3,7 @@ import useAuth from "../hook/useAuth"
 
 export const UserContext = createContext({
     user: null,
-    isAuth: false,
+    isAuth: undefined,
 })
 
 export const UserProvider = ({ children }) => {

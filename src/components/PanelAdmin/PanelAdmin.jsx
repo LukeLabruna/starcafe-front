@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../context/UserContext.jsx'
 import { useNavigate } from 'react-router-dom'
 import Login from '../Login/Login.jsx'
@@ -11,7 +11,9 @@ const PanelAdmin = () => {
     const { user, isAuth } = useContext(UserContext)
 
     useEffect(() => {
-        if (!isAuth) navigate("/login")
+        if (isAuth !== undefined) {
+            if (!isAuth) navigate("/login")
+          }
     }, [isAuth, navigate])
 
     if (!user) return <h2>Cargando...</h2>;

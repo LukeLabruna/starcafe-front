@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import api from "../config/axiosConfig.js"
 
 const useAuth = () => {
-    const [auth, setAuth] = useState({ isAuth: false, user: null })
+    const [auth, setAuth] = useState({ isAuth: undefined, user: null })
 
     useEffect(() => {
         const checkAuth = async () => {

@@ -1,0 +1,40 @@
+.cardItem .priceAdmin {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 0.5rem;
+    height: 3rem;
+    align-items: center;
+}
+
+.cardItem .priceAdmin p {
+    font-size: 2rem;
+}
+
+.cardItem .priceAdmin input {
+    border: none;
+    background-color: #f9e4c9;
+    width: 4rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    height: 100%;
+}
+
+.cardItem button {
+    background-color: #f9e4c9;
+    border: none;
+    border-radius: 0.5rem;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+
+.custom-swal-popup {
+    color: #f9e4c9;
+    width: 16rem !important;
+    text-align: center  !important;
+}
+
+.custom-swal-timer {
+    background-color: #f9e4c9 !important; 
+}

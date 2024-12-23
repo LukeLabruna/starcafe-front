@@ -30,7 +30,6 @@ const ItemContainer = ({title}) => {
     <div className="itemContainer">
         <h2>{title}</h2>
         <Categories setCategory={setCategory} />
-        <h3>Productos</h3>
         {products.length >= 1 
         ? products.map( item => (
             isAuth && user.role === "admin"

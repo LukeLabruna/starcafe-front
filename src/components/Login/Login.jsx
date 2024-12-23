@@ -24,6 +24,7 @@ const Login = () => {
 
         try {
             const response = await api.post("/user/login", bodyData)
+            console.log(response.data)
             navigate("/paneladmin")
         } catch (error) {
             console.log(error.response.data)

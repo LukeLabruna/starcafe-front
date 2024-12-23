@@ -1,5 +1,4 @@
 import { useState, createContext, useEffect } from "react"
-import useAuth from "../hook/useAuth"
 
 export const UserContext = createContext({
     user: null,

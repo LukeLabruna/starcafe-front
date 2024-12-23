@@ -1,0 +1,17 @@
+.loading h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    animation: blink 2s infinite linear;
+}
+
+@keyframes blink {
+    0%, 100% {
+      opacity: 1; /* Texto completamente visible */
+    }
+    50% {
+      opacity: 0; /* Texto invisible */
+    }
+  }

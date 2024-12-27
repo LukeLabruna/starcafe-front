@@ -13,3 +13,13 @@
 .navBar a {
     width: 25%;
 }
+
+@media screen and (max-width: 800px) {
+    .navBar {
+        justify-content: space-between;
+    }
+
+    .navBar a {
+        width: auto;
+    }
+}

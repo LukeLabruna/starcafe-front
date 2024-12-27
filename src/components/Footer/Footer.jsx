@@ -10,6 +10,9 @@ const Footer = () => {
             <Link to={"/menu"}>Menu</Link>
             <a href="https://wa.link/u145yu">Contactenos</a>
         </div>
+        <div className="copyright">
+          <p>Copyright © 2024 Star-Cafe & Luke Labruna. Todos los derechos reservados.</p>
+        </div>
     </footer>
   )
 }

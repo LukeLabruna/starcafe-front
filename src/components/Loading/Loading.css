@@ -1,4 +1,4 @@
-.loading h1 {
+.loading {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -7,11 +7,21 @@
     animation: blink 2s infinite linear;
 }
 
+.loading p {
+  text-align: center;
+}
+
 @keyframes blink {
     0%, 100% {
-      opacity: 1; /* Texto completamente visible */
+      opacity: 1;
     }
     50% {
-      opacity: 0; /* Texto invisible */
+      opacity: 0;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .loading h1 {
+      font-size: 3rem;
     }
   }

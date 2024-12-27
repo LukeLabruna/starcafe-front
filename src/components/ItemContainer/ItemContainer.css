@@ -15,3 +15,9 @@
     text-align: center;
     margin: 2rem;
 }
+
+.itemContainer>p {
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem;
+}

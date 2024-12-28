@@ -1,20 +1,45 @@
+import { useState, useEffect, useRef } from "react"
 import "./Categories.css"
 
 const Categories = ({ setCategory }) => {
 
-    const handleOnClick = (e) => {
+    const [showCategory, setShowCategory] = useState(false)
+    const categoryRef = useRef(null)
+
+    const handleSetCategory = (e) => {
         setCategory(e.target.dataset.category)
     }
 
+    const handleShowAll = () => {
+        setShowCategory(!showCategory)
+    }
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (categoryRef.current && !categoryRef.current.contains(event.target)) {
+                setShowCategory(false)
+            }
+        }
+
+        document.addEventListener("click", handleClickOutside)
+        return () => {
+            document.removeEventListener("click", handleClickOutside)
+        }
+    }, [])
+
     return (
-        <div className="categories">
-            <button onClick={handleOnClick} data-category="Desayuno">Desayuno</button>
-            <button onClick={handleOnClick} data-category="Empanadas">Empanadas</button>
-            <button onClick={handleOnClick} data-category="Ensaladas">Ensaladas</button>
-            <button onClick={handleOnClick} data-category="Pizzas">Pizzas</button>
-            <button onClick={handleOnClick} data-category="PromoDesayuno">Promo desayuno</button>
-            <button onClick={handleOnClick} data-category="Sandwiches">Sandwiches</button>
-            <button onClick={handleOnClick} data-category="Tartas">Tartas</button>
+        <div ref={categoryRef} className="categoriesContainer">
+        <h3 onClick={handleShowAll}>Categorias<span>▼</span></h3>
+        <div className={`categories ${showCategory && "showCategories"}`}>
+            <p onClick={handleSetCategory} data-category="Desayuno">Desayuno</p>
+            <p onClick={handleSetCategory} data-category="Empanadas">Empanadas</p>
+            <p onClick={handleSetCategory} data-category="Ensaladas">Ensaladas</p>
+            <p onClick={handleSetCategory} data-category="Pizzas">Pizzas</p>
+            <p onClick={handleSetCategory} data-category="PromoDesayuno">Promo desayuno</p>
+            <p onClick={handleSetCategory} data-category="Sandwiches">Sandwiches</p>
+            <p onClick={handleSetCategory} data-category="Tartas">Tartas</p>
+            <p onClick={handleSetCategory} data-category="">Todo</p>
+        </div>
         </div>
     )
 }

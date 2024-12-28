@@ -39,6 +39,7 @@ const ItemContainer = ({ title }) => {
                 : <>
                     <h2>{title}</h2>
                     <Categories setCategory={setCategory} />
+                    {category && <h3>{category}</h3>}
                     {products.length >= 1
                         ? products.map(item => (
                             isAuth && user.role === "admin" && title === "Panel Administrador"

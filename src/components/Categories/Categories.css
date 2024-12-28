@@ -1,19 +1,42 @@
-.categories {
+.categoriesContainer h3 {
+    font-size: 1.5rem;
+    text-align: center;
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    align-items: center;
     justify-content: center;
-    gap: 1.5rem;
-    margin: 2rem 0;
+    width: 100%;
 }
 
-.categories button {
-    border: none;
+.categoriesContainer h3 span {
+    font-size: 0.75rem;
+}
+
+.categoriesContainer {
+    position: relative;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #f9e4c9;
-    padding: 0.5rem;
-    padding-bottom: 0.3rem;
-    border-radius: 0.3rem;
-    font-family: Brixton-Outline;
-    font-size: 1rem;
-    align-items: baseline;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.82);
+}
+
+.categories p {
+    color: black;
+}
+
+.categories.showCategories {
+    max-height: 20rem;
+    padding: 1rem;
 }

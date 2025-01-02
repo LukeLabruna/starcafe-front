@@ -58,3 +58,9 @@ a {
     position: relative;
     padding-bottom: 8rem
 }
+
+@media screen and (max-width: 400px) {
+    #root {
+        padding-bottom: 12rem
+    }
+}

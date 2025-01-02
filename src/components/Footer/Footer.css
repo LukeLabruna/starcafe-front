@@ -42,3 +42,21 @@ footer h2, footer p {
         width: 100%;
     }
 }
+
+@media screen and (max-width: 400px) {
+
+    .links {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .copyright {
+        padding: 0.5rem 5rem;
+    }
+
+    footer {
+        padding-bottom: 3rem;
+    }
+}
